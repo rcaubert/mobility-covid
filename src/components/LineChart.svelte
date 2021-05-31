@@ -51,58 +51,35 @@
     }
 
     // tooltip
-    /*let pageX;
-    let pageY;
+    const formatTooltip = (x) => {
+        const format = timeFormat("%B %d, %Y");
+        let ret = format(new Date(x));
+        return (ret);
+    }
 
-    const mouseMove = (event) => {
-        pageX = event.pageX - 5;
-        pageY = event.pageY - 5;
-
-        console.log("x, y", pageX, pageY);
-        let i = bisect(points, xScale.invert(m.x));
-
-        if (i < points.length) {
-          point = points[i];
-        }
-    }*/
-
-    // d3's bisector function
-	//var bisect = bisector((d) => d.x).right;
     const bisect = bisector((d) => {
         return (new Date(d.x));
     }).right;
-    //var bisect = bisector(function(d) { return (new Date(d.x)); }).right;
 
 	let m = { x: 0, y: 0 };
 	let point = data[0];
-    console.log("point before", point);
 
 	function handleMousemove(event) {
-    m.x = event.offsetX;
-    m.y = event.offsetY;
+        m.x = event.offsetX;
+        m.y = event.offsetY;
 
-		// returns point to right of our current mouse position
-    let i = bisect(data, xScale.invert(m.x));
-		console.log(i);
-    if (i < data.length) {
-      point = data[i]; // update point
-    }
-    console.log("point after", point);
+        let i = bisect(data, xScale.invert(m.x));
+
+        if (i < data.length) {
+          point = data[i];
+        }
 	}
-
-  // coords for horizontal tooltip line
-  let hline = {};
-  $: hline.y1 = yScale(point.y);
-  $: hline.y2 = yScale(point.y);
-  $: hline.x1 = margin.left;
-  $: hline.x2 = width - margin.right;
-
-  // coords for vertical tooltip line
-  let vline = {};
-  $: vline.y1 = 0;
-  $: vline.y2 = height - margin.bottom;
-  $: vline.x1 = xScale(point.x);
-  $: vline.x2 = xScale(point.x);
+    // vertical line
+      let vline = {};
+      $: vline.y1 = 0;
+      $: vline.y2 = height - margin.bottom;
+      $: vline.x1 = xScale(new Date(point.x));
+      $: vline.x2 = xScale(new Date(point.x));
 
 </script>
 
@@ -159,11 +136,8 @@
                 out:fade
             />
             <!-- tooltip -->
-            <Tooltip {hline} {vline} />
-            <Dot x={xScale(point.x)} y={yScale(point.y)} />
+            <Tooltip {vline} />
+            <Dot x={xScale(new Date(point.x))} y={yScale(point.y)} val={point.y} day={formatTooltip(point.x)}/>
         </svg>
     {/if}
 </div>
-
-<style>
-</style>

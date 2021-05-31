@@ -8,10 +8,12 @@
 </script>
 
 <main>
-	<h1>Delhi slowly emerges out of lockdown.</h1>
+	<h1>Delhi slowly emerges from its mobility restrictions</h1>
+	<p>Mobility trend for public transport hubs such as subway, bus, and train stations.
+	Median by day of week from January 3rd-February 6th 2020 in Delhi, India.</p>
 		<div class='chart'>
 			<LineChart data={data} />
-			<p>Source: Google Mobility Report</p>
+			<p>Source: <a href="https://www.google.com/covid19/mobility/" target="_blank">Google Mobility Reports</a></p>
 		</div>
 </main>
 
@@ -37,5 +39,8 @@
 		margin-bottom: 1rem;
 	}
 
+	p {
+		font-size: 1rem;
+	}
 
 </style>
