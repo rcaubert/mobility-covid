@@ -8,7 +8,7 @@
 </script>
 
 <main>
-	<h1>Delhi slowly emerges from its mobility restrictions</h1>
+	<h1>Delhi in slow motion</h1>
 	<p>Mobility trend for public transport hubs such as subway, bus, and train stations.
 	Median by day of week from January 3rd-February 6th 2020 in Delhi, India.</p>
 		<div class='chart'>
