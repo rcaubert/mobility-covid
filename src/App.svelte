@@ -8,7 +8,7 @@
 </script>
 
 <main>
-	<h1>Dehli slowly emerges out of lockdown.</h1>
+	<h1>Delhi slowly emerges out of lockdown.</h1>
 		<div class='chart'>
 			<LineChart data={data} />
 			<p>Source: Google Mobility Report</p>

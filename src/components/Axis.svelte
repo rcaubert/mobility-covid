@@ -32,11 +32,11 @@
 <style>
     text {
         font-size: 0.8rem;
-        fill: black;
+        fill: #595959;
     }
 
     .tick line {
-        stroke: black;
+        stroke: #000;
         opacity: 0.6;
     }
 </style>
