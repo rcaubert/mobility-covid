@@ -10,6 +10,10 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
+    "d3-array": "latest",
+    "d3-regression": "latest",
+    "d3-scale": "latest",
+    "d3-selection": "latest",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
