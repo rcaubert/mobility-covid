@@ -1,20 +1,17 @@
 <script>
     import { fade } from 'svelte/transition';
-    //import { transition } from 'd3-transition';
     import { line } from 'd3-shape';
     import { timeFormat } from 'd3-time-format';
     import { scaleTime, scaleLinear } from 'd3-scale';
     import { extent, bisector } from 'd3-array';
 
     import Axis from './Axis.svelte';
-    import Axes from './Axes.svelte';
 
     export let data;
 
     // chart dimensions
     const height = 400;
     const margin = { top: 20, right: 20, bottom: 40, left: 25 };
-    const marg = 40;
 
     let width;
     let extentX = extent(data, d => new Date(d.date));
